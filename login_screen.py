@@ -1,6 +1,7 @@
 import os
 
 os.environ['KIVY_HOME'] = 'home'
+os.environ['KIVY_NO_CONSOLELOG'] = '1'
 
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
