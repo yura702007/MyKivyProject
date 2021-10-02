@@ -1,32 +1,22 @@
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.dropdown import DropDown
-from kivy.uix.button import Button
 from kivy.properties import ObjectProperty
-from kivy.base import runTouchApp
+from kivy.uix.dropdown import DropDown
 
 
-class UserSettings(DropDown):
+class DropDownCustom(DropDown):
     pass
 
 
 class MyWidget(BoxLayout):
-    my_settings = ObjectProperty()
 
-    def show_user_settings(self):
-        dp = UserSettings()
-        btn = Button(text='HELLO')
-        btn.bind(on_release=dp.open)
-        dp.bind(on_select=lambda instance, x: setattr(btn, 'text', x))
-        runTouchApp(btn)
+    def spinner_clicked(self, value):
+        self.ids.click_label.text = f'You selected: {value}'
 
 
 class MyMenuApp(App):
-
     def build(self):
-        widget = MyWidget()
-        # widget.add_widget(self.settings)
-        return widget
+        return MyWidget()
 
 
 if __name__ == '__main__':
