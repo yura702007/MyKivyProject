@@ -1,16 +1,29 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
-from kivy.uix.gridlayout import GridLayout
-from kivy.uix.label import Label
-from kivy.uix.textinput import TextInput
-from kivy.uix.button import Button
+from kivy.lang import Builder
+from kivy.properties import ObjectProperty
+
+Builder.load_file('main.kv')
 
 
 class MyWidget(Widget):
-    pass
+    name = ObjectProperty()
+    pizza = ObjectProperty()
+    my_color = ObjectProperty()
+    output_info = ObjectProperty()
+
+    def press(self):
+        name = self.name.text
+        pizza = self.pizza.text
+        my_color = self.my_color.text
+        output = f'My name is {name},\ni like pizza {pizza},\nmy favorite color - {my_color}'
+        self.output_info.text = output
+        self.name.text = ''
+        self.pizza.text = ''
+        self.my_color.text = ''
 
 
-class MyApp(App):
+class MainApp(App):
     widget = MyWidget()
 
     def build(self):
@@ -18,4 +31,4 @@ class MyApp(App):
 
 
 if __name__ == '__main__':
-    MyApp().run()
+    MainApp().run()
