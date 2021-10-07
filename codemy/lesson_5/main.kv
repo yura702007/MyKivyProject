@@ -1,0 +1,55 @@
+#:kivy 2.0.0
+#: import utils kivy.utils
+
+<MyWidget>
+    name: name
+    pizza: pizza
+    my_color: my_color
+    output_info: output_info
+
+    GridLayout:
+        padding: 25
+        spacing: 10
+        cols: 1
+        size: root.width, root.height
+
+        GridLayout:
+            spacing: 5
+            cols: 2
+
+            Label:
+                text: 'Name'
+
+            TextInput:
+                id:name
+                multiline: False
+                background_color: utils.get_color_from_hex('#37e60b')
+
+            Label:
+                text: 'Favorite pizza'
+
+            TextInput:
+                id: pizza
+                multiline: False
+                background_color: utils.get_color_from_hex('#37e60b')
+
+            Label:
+                text: 'Color'
+
+            TextInput:
+                id: my_color
+                multiline: False
+                background_color: utils.get_color_from_hex('#37e60b')
+
+        Label:
+            id: output_info
+            text: 'Output Info'
+            font_size: 32
+
+        Button:
+            text: 'Submit'
+            font_size: 32
+            background_normal: ''
+#            background_color: (230/255.0, 11/255.0, 215/255.0, 1)
+            background_color: utils.get_color_from_hex('#e60bd7')
+            on_release: root.press()
