@@ -10,7 +10,7 @@ class MyWidget(Widget):
     pass
 
 
-class MyApp(App):
+class MainApp(App):
     widget = MyWidget()
 
     def build(self):
@@ -18,4 +18,4 @@ class MyApp(App):
 
 
 if __name__ == '__main__':
-    MyApp().run()
+    MainApp().run()
