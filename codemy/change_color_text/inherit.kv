@@ -2,17 +2,13 @@
 #: import utils kivy.utils
 
 <Button>:
-#    font_size: 32
+    font_size: 32
     background_normal: ''
     background_color: utils.get_color_from_hex('#15ebab')
 
 <TextInput>:
     multiline: False
     background_color: utils.get_color_from_hex('97f788')
-
-<Label>:
-    font_size: 32
-#    background_color: utils.get_color_from_hex('#a30b16')
 
 <MyWidget>:
     BoxLayout:
@@ -23,6 +19,14 @@
 
         Label:
             text: 'Name'
+            font_size: 45
+            background_color: (0, 0, 1, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
 
         TextInput:
 
