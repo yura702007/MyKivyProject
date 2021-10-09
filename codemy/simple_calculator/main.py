@@ -11,7 +11,8 @@ Builder.load_file('calculator.kv')
 
 
 class MyWidget(Widget):
-    pass
+    def clear(self):
+        self.ids.calc_input.text = ''
 
 
 class MyCalculator(App):
