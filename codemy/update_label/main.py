@@ -7,7 +7,10 @@ Builder.load_file('update_label.kv')
 
 
 class MyWidget(Widget):
-    pass
+    def press(self):
+        name = self.ids.name_input.text
+        self.ids.name_label.text = f'Hello, {name}!'
+        self.ids.name_input.text = ''
 
 
 class MyApp(App):
