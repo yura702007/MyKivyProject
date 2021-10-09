@@ -1,0 +1,23 @@
+<MyWidget>:
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        size: root.width, root.height
+
+        Label:
+            id: name_label
+            font_size: 32
+            text: 'What is your name?'
+
+        TextInput:
+            id: name_input
+            size_hint: (1, .3)
+            multiline: False
+
+        Button:
+            size_hint: (1, .3)
+            font_size: 32
+            text: 'Submit'
+            on_press: root.press()
