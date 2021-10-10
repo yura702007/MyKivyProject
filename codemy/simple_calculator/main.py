@@ -33,7 +33,9 @@ class MyWidget(Widget):
 
     def press_num_btn(self, symbol):
         prior = self.ids.calc_input.text
-        if prior == '0':
+        if 'Ошибка' in prior:
+            pass
+        elif prior == '0':
             self.ids.calc_input.text = f'{symbol}'
         else:
             self.ids.calc_input.text = f'{prior}{symbol}'
@@ -52,12 +54,14 @@ class MyWidget(Widget):
 
     def equals(self):
         prior = self.ids.calc_input.text
-        if '+' in prior:
-            num_list = prior.split('+')
-            answer = 0.0
-            for num in num_list:
-                answer += float(num)
-            self.ids.calc_input.text = str(answer)
+        try:
+            answer = eval(prior)
+            if answer == int(answer):
+                self.ids.calc_input.text = str(int(answer))
+            else:
+                self.ids.calc_input.text = str(answer)
+        except:
+            self.ids.calc_input.text = 'Ошибка'
 
 
 class MyCalculator(App):
