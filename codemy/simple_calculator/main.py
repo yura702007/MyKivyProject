@@ -20,30 +20,32 @@ class MyWidget(Widget):
         if prior == '0':
             self.ids.calc_input.text = f'{symbol}'
         else:
-            self.ids.calc_input.text += f'{symbol}'
+            self.ids.calc_input.text = f'{prior}{symbol}'
+
+    def add(self):
+        prior = self.ids.calc_input.text
+        self.ids.calc_input.text = f'{prior}+'
+
+    def divide(self):
+        prior = self.ids.calc_input.text
+        self.ids.calc_input.text = f'{prior}/'
+
+    def multiply(self):
+        prior = self.ids.calc_input.text
+        self.ids.calc_input.text = f'{prior}*'
+
+    def subtract(self):
+        prior = self.ids.calc_input.text
+        self.ids.calc_input.text = f'{prior}-'
 
     def equals(self):
-        expression = self.ids.calc_input.text
-        operands = ['+', '-', '*', '/']
-        operand, exp = '', None
-        result = 0
-        for o in operands:
-            if o in expression:
-                exp = expression.split(o)
-                operand = o
-        if operand == '+':
-            result += int(exp[0]) + int(exp[1])
-        elif operand == '-':
-            result += int(exp[0]) - int(exp[1])
-        elif operand == '*':
-            result += int(exp[0]) * int(exp[1])
-        elif operand == '/':
-            result += int(exp[0]) / int(exp[1])
-        if result == int(result):
-            self.ids.calc_input.text = str(int(result))
-        else:
-            self.ids.calc_input.text = str(result)
-
+        prior = self.ids.calc_input.text
+        if '+' in prior:
+            num_list = prior.split('+')
+            answer = 0
+            for num in num_list:
+                answer += int(num)
+            self.ids.calc_input.text = str(answer)
 
 
 class MyCalculator(App):

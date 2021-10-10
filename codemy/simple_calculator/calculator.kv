@@ -34,7 +34,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: '/'
-                on_press: root.press_num_btn('/')
+                on_press: root.divide()
 
 #           rows_2
             Button:
@@ -58,8 +58,8 @@
             Button:
                 size_hint: (.2, .2)
                 font_size: 32
-                text: 'X'
-                on_press: root.press_num_btn('*')
+                text: 'x'
+                on_press: root.multiply()
 
 #           rows_3
             Button:
@@ -84,7 +84,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: '-'
-                on_press: root.press_num_btn('-')
+                on_press: root.subtract()
 
 #           rows_4
             Button:
@@ -109,7 +109,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: '+'
-                on_press: root.press_num_btn('+')
+                on_press: root.add()
 
 #           rows_5
             Button:
