@@ -44,7 +44,8 @@ class MyWidget(Widget):
 
     def dot(self):
         prior = self.ids.calc_input.text
-        if '.' in prior:
+        num_list = prior.split('+')
+        if '.' in num_list[-1]:
             pass
         else:
             self.ids.calc_input.text = f'{prior}.'
