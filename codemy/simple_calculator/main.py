@@ -12,6 +12,13 @@ Builder.load_file('calculator.kv')
 
 class MyWidget(Widget):
 
+    def remove(self):
+        prior = self.ids.calc_input.text
+        if len(prior) > 1:
+            self.ids.calc_input.text = prior[:-1]
+        else:
+            self.ids.calc_input.text = '0'
+
     def clear(self):
         self.ids.calc_input.text = '0'
 
@@ -22,21 +29,16 @@ class MyWidget(Widget):
         else:
             self.ids.calc_input.text = f'{prior}{symbol}'
 
-    def add(self):
+    def math_sign(self, sign):
         prior = self.ids.calc_input.text
-        self.ids.calc_input.text = f'{prior}+'
+        self.ids.calc_input.text = f'{prior}{sign}'
 
-    def divide(self):
+    def dot(self):
         prior = self.ids.calc_input.text
-        self.ids.calc_input.text = f'{prior}/'
-
-    def multiply(self):
-        prior = self.ids.calc_input.text
-        self.ids.calc_input.text = f'{prior}*'
-
-    def subtract(self):
-        prior = self.ids.calc_input.text
-        self.ids.calc_input.text = f'{prior}-'
+        if '.' in prior:
+            pass
+        else:
+            self.ids.calc_input.text = f'{prior}.'
 
     def equals(self):
         prior = self.ids.calc_input.text

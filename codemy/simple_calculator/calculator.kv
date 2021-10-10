@@ -23,9 +23,9 @@
             Button:
                 size_hint: (.2, .2)
                 font_size: 32
-                text: 'CE'
+                text: '>>'
+                on_press: root.remove()
             Button:
-                id: clear
                 size_hint: (.2, .2)
                 font_size: 32
                 text: 'C'
@@ -34,7 +34,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: '/'
-                on_press: root.divide()
+                on_press: root.math_sign('/')
 
 #           rows_2
             Button:
@@ -59,7 +59,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: 'x'
-                on_press: root.multiply()
+                on_press: root.math_sign('*')
 
 #           rows_3
             Button:
@@ -84,7 +84,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: '-'
-                on_press: root.subtract()
+                on_press: root.math_sign('-')
 
 #           rows_4
             Button:
@@ -109,7 +109,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: '+'
-                on_press: root.add()
+                on_press: root.math_sign('+')
 
 #           rows_5
             Button:
@@ -128,7 +128,7 @@
                 background_color: (0.46, 0.56, 0.51, 1)
                 font_size: 32
                 text: '.'
-                on_press: root.press_num_btn('.')
+                on_press: root.dot()
             Button:
                 size_hint: (.2, .2)
                 font_size: 32
