@@ -12,6 +12,15 @@ Builder.load_file('calculator.kv')
 
 class MyWidget(Widget):
 
+    def pos_neg(self):
+        prior = self.ids.calc_input.text
+        if prior == '0':
+            pass
+        elif '-' in prior:
+            self.ids.calc_input.text = f'{prior.replace("-", "")}'
+        else:
+            self.ids.calc_input.text = f'-{prior}'
+
     def remove(self):
         prior = self.ids.calc_input.text
         if len(prior) > 1:
@@ -44,9 +53,9 @@ class MyWidget(Widget):
         prior = self.ids.calc_input.text
         if '+' in prior:
             num_list = prior.split('+')
-            answer = 0
+            answer = 0.0
             for num in num_list:
-                answer += int(num)
+                answer += float(num)
             self.ids.calc_input.text = str(answer)
 
 
