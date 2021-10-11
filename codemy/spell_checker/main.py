@@ -7,7 +7,12 @@ Builder.load_file('main.kv')
 
 
 class MyWidget(Widget):
-    pass
+    def press(self):
+        s = Spelling()
+        s.select_language('en-US')
+        word = self.ids.word_input.text
+        option = s.suggest(word)
+        self.ids.word_label.text = f'{option}'
 
 
 class MyApp(App):
