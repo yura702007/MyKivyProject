@@ -4,3 +4,12 @@
     BoxLayout:
         orientation: 'vertical'
         size: root.width, root.height
+        padding: 30
+        spacing: 20
+
+        Image:
+            id: my_image
+
+        FileChooserIconView:
+            id: file_chooser
+            on_selection: my_widget.selected(file_chooser.selection)

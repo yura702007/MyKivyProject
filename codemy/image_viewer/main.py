@@ -6,12 +6,18 @@ Builder.load_file('viewer.kv')
 
 
 class MyWidget(Widget):
-    pass
+    def selected(self, file_name):
+        try:
+
+        except:
+            pass
 
 
 class MyApp(App):
+    widget = MyWidget()
+
     def build(self):
-        return MyWidget()
+        return self.widget
 
 
 if __name__ == '__main__':
