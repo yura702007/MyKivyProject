@@ -9,9 +9,20 @@
         Button:
             text: 'Hello World'
 
-        Button:
+        RoundedButton:
             text: 'Goodbye'
             pos_hint: {'center_x': .5}
             size_hint: (1, .3)
-            background_normal: ''
-            background_color: (.2, .5, .3, 1)
+#            background_normal: ''
+#            background_color: (.2, .5, .3, 1)
+
+<RoundedButton@Button>:
+    background_normal: ''
+    background_color: (0, 0, 0, 0)
+    canvas.before:
+        Color:
+            rgba: (.2,.5,.3,1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [42]
