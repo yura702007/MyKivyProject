@@ -8,7 +8,7 @@ Builder.load_file('viewer.kv')
 class MyWidget(Widget):
     def selected(self, file_name):
         try:
-
+            self.ids.my_image.source = file_name[0]
         except:
             pass
 
