@@ -6,7 +6,8 @@ Builder.load_file('checkbox.kv')
 
 
 class MyWidget(Widget):
-    pass
+    def checkbox_click(self, instance, value):
+        print(instance, value)
 
 
 class CheckBoxApp(App):
