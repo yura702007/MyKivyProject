@@ -6,8 +6,9 @@ Builder.load_file('checkbox.kv')
 
 
 class MyWidget(Widget):
-    def checkbox_click(self, instance, value):
-        print(instance, value)
+    def checkbox_click(self, instance, value, topping):
+        if value:
+            self.ids.label_output.text = f'You selected {topping}'
 
 
 class CheckBoxApp(App):
