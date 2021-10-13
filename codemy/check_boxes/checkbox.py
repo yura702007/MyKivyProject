@@ -6,9 +6,18 @@ Builder.load_file('checkbox.kv')
 
 
 class MyWidget(Widget):
+    toppings = []
+
     def checkbox_click(self, instance, value, topping):
         if value:
-            self.ids.label_output.text = f'You selected {topping}'
+            self.toppings.append(topping)
+        else:
+            self.toppings.remove(topping)
+
+        if self.toppings:
+            self.ids.label_output.text = f'You selected {", ".join(self.toppings)}'
+        else:
+            self.ids.label_output.text = f'You selected nothing'
 
 
 class CheckBoxApp(App):
