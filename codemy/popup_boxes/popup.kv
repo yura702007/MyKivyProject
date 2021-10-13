@@ -1,8 +1,10 @@
 #: import Factory kivy.factory.Factory
 
 <MyPopup@Popup>:
-#    auto_dismiss: False
-#    title: 'This is popup box'
+    auto_dismiss: False
+    size_hint: (.6, .2)
+    pos_hint: {'x': .2, 'top': .9}
+    title: 'This is popup box'
     Button:
         text: 'Close Me'
         font_size: 24
