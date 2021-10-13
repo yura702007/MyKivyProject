@@ -1,6 +1,7 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.lang.builder import Builder
+from kivy.uix.screenmanager import ScreenManager, Screen
 
 Builder.load_file('window.kv')
 
