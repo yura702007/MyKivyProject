@@ -3,11 +3,18 @@ from kivy.uix.widget import Widget
 from kivy.lang.builder import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 
+
 class FirstWindow(Screen):
     pass
 
+
 class SecondWindow(Screen):
     pass
+
+
+class WindowManager(ScreenManager):
+    pass
+
 
 Builder.load_file('window.kv')
 
