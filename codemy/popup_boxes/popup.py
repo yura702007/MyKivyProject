@@ -9,10 +9,11 @@ class MyWidget(Widget):
     pass
 
 
-class PopupApp(App):
+# имя класса != имя файл.kv !!!
+class SampleApp(App):
     def build(self):
         return MyWidget()
 
 
 if __name__ == '__main__':
-    PopupApp().run()
+    SampleApp().run()
