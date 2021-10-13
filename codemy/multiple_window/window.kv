@@ -1,3 +1,35 @@
 WindowManager:
     FirstWindow:
     SecondWindow:
+
+<FirstWindow>:
+    name: 'first'
+
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.width, root.height
+
+        Label:
+            text: 'First screen'
+            font_size: 32
+
+        Button:
+            text: 'Next screen'
+            font_size: 32
+            on_release:
+
+<SecondWindow>:
+    name: 'second'
+
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.width, root.height
+
+        Label:
+            text: 'Second screen'
+            font_size: 32
+
+        Button:
+            text: 'Go back'
+            font_size: 32
+            on_release:
