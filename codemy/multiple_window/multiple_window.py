@@ -16,16 +16,12 @@ class WindowManager(ScreenManager):
     pass
 
 
-Builder.load_file('window.kv')
-
-
-class MyWidget(Widget):
-    pass
+kv = Builder.load_file('window.kv')
 
 
 class MainApp(App):
     def build(self):
-        return MyWidget()
+        return kv
 
 
 if __name__ == '__main__':
