@@ -16,7 +16,9 @@ WindowManager:
         Button:
             text: 'Next screen'
             font_size: 32
-            on_release: app.root.current = 'second'
+            on_release:
+                app.root.current = 'second'
+                root.manager.transition.direction = 'left'
 
 <SecondWindow>:
     name: 'second'
@@ -32,4 +34,6 @@ WindowManager:
         Button:
             text: 'Go back'
             font_size: 32
-            on_release: app.root.current = 'first'
+            on_release:
+                app.root.current = 'first'
+                root.manager.transition.direction = 'right'
