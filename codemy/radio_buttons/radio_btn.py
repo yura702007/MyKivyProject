@@ -6,7 +6,11 @@ Builder.load_file('radio_btn.kv')
 
 
 class MyWidget(Widget):
-    pass
+    def checkbox_click(self, instance, value, topping):
+        if value:
+            self.ids.label_output.text = f'You selected pizza topping - {topping}'
+        else:
+            self.ids.label_output.text = ''
 
 
 class ButtonsApp(App):
