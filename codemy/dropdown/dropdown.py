@@ -6,7 +6,8 @@ Builder.load_file('main.kv')
 
 
 class MyWidget(Widget):
-    pass
+    def spinner_clicked(self, value):
+        self.ids.click_label.text = f'You selected: {value}'
 
 
 class DropDownApp(App):
