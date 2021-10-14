@@ -1,11 +1,12 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.lang.builder import Builder
+from kivy.uix.tabbedpanel import TabbedPanel
 
 Builder.load_file('tabs.kv')
 
 
-class MyWidget(Widget):
+class MyWidget(TabbedPanel):
     pass
 
 

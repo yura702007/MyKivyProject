@@ -1,4 +1,20 @@
 <MyWidget>:
-    BoxLayout:
-        orientation: 'vertical'
-        size: root.width, root.height
+    do_default: False
+
+    TabbedPanelItem:
+        text: 'Tab 1'
+        Label:
+            text: 'Hello World'
+
+    TabbedPanelItem:
+        text: 'Tab 2'
+        BoxLayout:
+            Label:
+                text: 'Press button =>'
+            Button:
+                text: 'Press me'
+
+    TabbedPanelItem:
+        text: 'Tab 3'
+        Image:
+            source: 'Фото025.jpg'
