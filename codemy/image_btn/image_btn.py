@@ -8,6 +8,11 @@ Builder.load_file('image_btn.kv')
 class MyWidget(Widget):
     def hello_on(self):
         self.ids.my_label.text = 'You pressed the button'
+        self.ids.my_image.source = 'on_press.png'
+
+    def hello_off(self):
+        self.ids.my_label.text = 'Hello World'
+        self.ids.my_image.source = 'press.png'
 
 
 class MySomeApp(App):
