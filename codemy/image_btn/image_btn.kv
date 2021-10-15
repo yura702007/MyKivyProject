@@ -13,5 +13,11 @@
         Button:
             text: 'Hello'
             font_size: 32
+            size_hint: (.15, .12)
+            background_color: (0, 0, 0, 0)
+            pos_hint: {'center_x': .5}
+            on_press: root.hello_on()
             Image:
                 source: 'press.png'
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y

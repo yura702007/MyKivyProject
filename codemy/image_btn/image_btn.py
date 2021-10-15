@@ -6,7 +6,8 @@ Builder.load_file('image_btn.kv')
 
 
 class MyWidget(Widget):
-    pass
+    def hello_on(self):
+        self.ids.my_label.text = 'You pressed the button'
 
 
 class MySomeApp(App):
