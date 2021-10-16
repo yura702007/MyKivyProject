@@ -7,8 +7,18 @@ Builder.load_file('animation.kv')
 
 
 class MyWidget(Widget):
-    def animate_it(self):
-        pass
+    def animate_it(self, widget, *args):
+        animate = Animation(
+            background_color=(1, 0, 1, 1)  # смена цвета фона кнопки
+        )
+        animate += Animation(size_hint=(1, 1))  # смена размера кнопки
+        animate += Animation(size_hint=(.5, 1))  # смена размера кнопки
+        animate += Animation(pos_hint={'center_x': .25})  # смена позиции кнопки
+        animate.start(widget)  # запуск анимации
+        animate.bind(on_complete=self.my_callback)  # смена запуск обратного вызова
+
+    def my_callback(self, *args):
+        self.ids.my_label.text = 'Wow'
 
 
 class MySomeApp(App):
