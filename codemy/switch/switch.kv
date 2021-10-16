@@ -2,3 +2,19 @@
     BoxLayout:
         orientation: 'vertical'
         size: root.width, root.height
+
+        Label:
+            id: my_label
+            font_size: 32
+            text: 'The Switch is On'
+
+        Switch:
+            id: my_switch
+            active: True
+            disabled: True
+            on_active: root.switch_active(self.active)
+
+        Button:
+            text: 'Click'
+            font_size: 32
+            on_release: root.on_switch()

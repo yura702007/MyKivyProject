@@ -6,7 +6,17 @@ Builder.load_file('switch.kv')
 
 
 class MyWidget(Widget):
-    pass
+    def switch_active(self, switch_value):
+        if switch_value:
+            self.ids.my_label.text = 'The Switch is On'
+        else:
+            self.ids.my_label.text = 'The Switch is Off'
+
+    def on_switch(self):
+        if self.ids.my_switch.disabled:
+            self.ids.my_switch.disabled = False
+        else:
+            self.ids.my_switch.disabled = True
 
 
 class MySomeApp(App):
