@@ -2,3 +2,23 @@
     BoxLayout:
         orientation: 'vertical'
         size: root.width, root.height
+
+        Label:
+            text: 'Status Progress'
+
+        Label:
+            id: status
+            text: '0'
+
+        ProgressBar:
+            id: my_bar
+            # Set default value
+#            value: .25
+            min: 0
+            max: 1
+            pos_hint: {'x': .1}
+            size_hint_x: .8
+
+        Button:
+            text: 'Press'
+            on_release: root.press_it()
