@@ -40,11 +40,13 @@ Screen:
             text: 'Log In'
             font_size: 20
             pos_hint: {'center_x': .5}
+            on_press: app.logger()
 
         MDRoundFlatButton:
             text: 'Clear'
             font_size: 20
             pos_hint: {'center_x': .5}
+            on_press: app.clear()
 
         Widget:
             size_hint_y: None
