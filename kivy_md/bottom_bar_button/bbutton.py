@@ -8,6 +8,9 @@ class MyButtonBarApp(MDApp):
         self.theme_cls.primary_palette = 'Blue'
         return Builder.load_file('bbutton.kv')
 
+    def pressed(self):
+        self.root.ids.my_label.text = 'You pressed button'
+
 
 if __name__ == '__main__':
     MyButtonBarApp().run()

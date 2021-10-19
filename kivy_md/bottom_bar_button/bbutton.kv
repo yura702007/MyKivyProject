@@ -12,6 +12,12 @@ MDBoxLayout:
 
     MDBottomAppBar:
         MDToolbar:
+            title: 'Bottom Menu'
+            left_action_items: [['menu']]
             icon: 'git'
             type: 'bottom'
-            mode: 'free-end'
+#            mode: 'free-end'
+            mode: 'end'
+#            mode: 'center'
+#            mode: 'free-center'
+            on_action_button: app.pressed()
