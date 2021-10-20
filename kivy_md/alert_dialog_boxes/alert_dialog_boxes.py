@@ -15,10 +15,13 @@ class MyDialogBoxesApp(MDApp):
     def show_alert_dialog(self):
         if not self.dialog:
             self.dialog = MDDialog(
-                text='Pretty Neat, Right',
+                title='Pretty Neat, Right',
+                text='This is some text...',
                 buttons=[
                     MDFlatButton(
-                        text='CANCEL', text_color=self.theme_cls.primary_color
+                        text='CANCEL',
+                        text_color=self.theme_cls.primary_color,
+                        on_release=self.close_dialog
                     ),
                     MDRectangleFlatButton(
                         text="Yes, It'S Neat!", text_color=self.theme_cls.primary_color
@@ -26,6 +29,9 @@ class MyDialogBoxesApp(MDApp):
                 ]
             )
         self.dialog.open()
+
+    def close_dialog(self, obj):
+        self.dialog.dismiss()
 
 
 if __name__ == '__main__':
