@@ -24,7 +24,9 @@ class MyDialogBoxesApp(MDApp):
                         on_release=self.close_dialog
                     ),
                     MDRectangleFlatButton(
-                        text="Yes, It'S Neat!", text_color=self.theme_cls.primary_color
+                        text="Yes, It'S Neat!",
+                        text_color=self.theme_cls.primary_color,
+                        on_release=self.change_my_label_text
                     )
                 ]
             )
@@ -32,6 +34,9 @@ class MyDialogBoxesApp(MDApp):
 
     def close_dialog(self, obj):
         self.dialog.dismiss()
+
+    def change_my_label_text(self, obj):
+        self.root.ids.my_label.text = obj.text
 
 
 if __name__ == '__main__':
