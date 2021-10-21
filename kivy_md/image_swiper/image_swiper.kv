@@ -1,26 +1,26 @@
-<MySwiper@MDSwiperItem>
-    FitImage:
-        source: 'images/DSC01244.JPG'
-        radius: [20]
+MDBoxLayout:
+    orientation: 'vertical'
 
-MDScreen:
-    MDToolbar:
-        id: toolbar
-        title: 'Our Swiper App'
-        pos_hint: {'top': 1}
-        elevation: 10
+    MDScreen:
 
-    MDSwiper:
-        size_hint_y: None
-        height: root.height - toolbar.height - dp(40)
-        y: root.height - self.height - toolbar.height - dp(20)
+        MDToolbar:
+            id: toolbar
+            title: 'Our Swiper App'
+            pos_hint: {'top': 1}
+            elevation: 10
 
-        MySwiper:
+        MDSwiper:
+            size_hint_y: None
+            height: root.height - toolbar.height - dp(80)
+            y: root.height - self.height - toolbar.height - dp(20)
 
-        MySwiper:
+            MDSwiperItem:
+                FitImage:
+                    id: my_image
+                    source: app.img_paths[app.count_img]
+                    radius: [20]
 
-        MySwiper:
-
-        MySwiper:
-
-        MySwiper:
+        MDRectangleFlatButton:
+            text: 'NEXT'
+            pos_hint: {'center_x': .5, 'center_y': .05}
+            on_release: app.listing_image()
