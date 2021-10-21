@@ -31,3 +31,17 @@ MDScreen:
             FitImage:
                 source: 'images/Фото021.jpg'
                 radius: [20]
+
+    BoxLayout:
+        orientation: 'horizontal'
+
+        MDRaisedButton:
+            text: 'Previous'
+            on_release: swiper.set_current(swiper.get_current_index()-1)
+
+        MDRaisedButton:
+            text: 'Next'
+            on_release: print(swiper.get_items())
+#            on_release: swiper.set_current(swiper.get_current_index()+1)
+
+#            len(swiper.get_items())
