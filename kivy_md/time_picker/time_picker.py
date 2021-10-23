@@ -7,6 +7,10 @@ class MyTimePickerApp(MDApp):
     def build(self):
         return Builder.load_file('time_picker.kv')
 
+    def open_time_picker(self):
+        time_dialog = MDTimePicker()
+        time_dialog.open()
+
 
 if __name__ == '__main__':
     MyTimePickerApp().run()
