@@ -1,8 +1,8 @@
 <MySwiper@MDSwiperItem>
 
-#    FitImage:
-#        source: 'images/Фото019.jpg'
-#        radius: [20]
+    FitImage:
+        source: 'images/Фото019.jpg'
+        radius: [20]
 
 MDScreen:
     MDToolbar:
@@ -18,19 +18,19 @@ MDScreen:
         y: root.height - self.height - toolbar.height - dp(20)
 
         MySwiper:
-            FitImage:
-                source: 'images/Фото019.jpg'
-                radius: [20]
+#            FitImage:
+#                source: 'images/Фото019.jpg'
+#                radius: [20]
 
         MySwiper:
-            FitImage:
-                source: 'images/Фото020.jpg'
-                radius: [20]
+#            FitImage:
+#                source: 'images/Фото020.jpg'
+#                radius: [20]
 
         MySwiper:
-            FitImage:
-                source: 'images/Фото021.jpg'
-                radius: [20]
+#            FitImage:
+#                source: 'images/Фото021.jpg'
+#                radius: [20]
 
     BoxLayout:
         orientation: 'horizontal'
@@ -41,7 +41,7 @@ MDScreen:
 
         MDRaisedButton:
             text: 'Next'
-            on_release: print(swiper.get_items())
+#            on_release: print(swiper.get_items(), type(swiper.get_items()))
 #            on_release: swiper.set_current(swiper.get_current_index()+1)
 
 #            len(swiper.get_items())
